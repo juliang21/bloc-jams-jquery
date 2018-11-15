@@ -24,7 +24,11 @@
 
    $('#time-control input').on('input', function (event) {
      player.skipTo(event.target.value);
+      });
 
+
+    $('#volume-control input').on('input', function (event) {
+     player.setVolume(event.target.value);
       });
 
    setInterval( () => {
@@ -34,5 +38,6 @@
      const percent = (currentTime / duration) * 100;
      $('#time-control .current-time').text( currentTime );
      $('#time-control input').val(percent);
+     $('#time-control .total-time').text( duration );
    }, 1000);
  }
